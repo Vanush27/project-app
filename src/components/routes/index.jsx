@@ -6,6 +6,7 @@ import Project from "../../pages/Project"
 import Header from "../Project/Header";
 import Footer from "../Project/Footer";
 import FormPage from "../../pages/Form";
+import SingleTask from "../../pages/SingleTask";
 
 export const routes = [
     {
@@ -49,6 +50,10 @@ export const routes = [
     {
         path: "/not-found",
         element: <NotFound />
+    },
+    {
+        path: "/task/:task_id",
+        element: <SingleTask />
     },
     {
         path: "*",

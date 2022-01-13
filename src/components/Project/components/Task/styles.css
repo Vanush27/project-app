@@ -9,12 +9,14 @@
 .card {
     height: 300px;
     width: 340px;
+
 }
 .bigDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+
 }
 .status-text {
     font-size: 19px;
@@ -30,4 +32,13 @@
 }
 .mr-2 {
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 950px){
+
+    /*.bigDiv{*/
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*   */
+    /*}*/
 }

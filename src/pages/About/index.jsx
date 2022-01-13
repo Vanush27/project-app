@@ -1,5 +1,5 @@
 import React from "react";
-// import avatar from "../../assets/log/logo.png"
+import avatar from "../../assets/image/avatar.jpg"
 import styles from "./about.module.css"
 
 const About = () => {
@@ -10,8 +10,8 @@ const About = () => {
                 </div>
                 <div className={`${styles.right}`}>
                     <div className={`${styles.wrapper}`}>
-                        <div className="image">
-                            {/*<img src={avatar} alt="avatar"/>*/}
+                        <div className={`${styles.image}`}>
+                            <img src={avatar} alt="avatar"/>
                         </div>
                         <div className={`${styles.contacts}`}>
                             <ul>

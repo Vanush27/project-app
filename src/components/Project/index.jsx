@@ -3,6 +3,7 @@ import {Button} from "react-bootstrap";
 import AddTask from "./components/AddTask";
 import Todo from "./components/Todo";
 import "./styles.css";
+import {idGenerator} from "./components/helpers/globalFunctions";
 
 const Project = () => {
 
@@ -80,7 +81,7 @@ const Project = () => {
         setMockTasks((prevData => {
             const copyData = [...prevData];
             const newTask = {
-                id: Math.random(),
+                id:idGenerator(),
                 title: title,
                 description: description,
                 status: "Active",

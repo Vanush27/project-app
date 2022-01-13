@@ -1,28 +1,59 @@
-import {Link, NavLink} from "react-router-dom";
-
-// import styles from "./pages.module.css"
-// import logo from "../../../assets/image/logo.png";
-// import "./styles.css";
+import React from "react";
+import {Box, Column, Container, FooterLink, Heading, Row,} from "./FooterStyles";
 
 const Footer = () => {
-    const classnames = ({isActive}) => isActive ? "nav_item active" : "nav_item";
-
     return (
-        <header className="header">
+        <Box>
+            <h1 style={{
+                color: "green",
+                textAlign: "center",
 
-            <div className="logo_wrapper">
-                <Link to="/">
-                    {/*<img src={logo} className={`${styles.logo}`} alt={logo}/>*/}
-                    {/*<img src={log} className={`${styles.logo}`} alt={logo}/>*/}
-                </Link>
-            </div>
-            <div className="nav">
-                <ul className="nav_list">
-                    <NavLink className={classnames} to="/">Home</NavLink>
-                </ul>
-            </div>
-        </header>
+            }}>
+
+            </h1>
+            <Container>
+                <Row>
+                    <Column>
+                        <Heading>Services</Heading>
+                        <FooterLink href="#">Writing</FooterLink>
+                        <FooterLink href="#">Internships</FooterLink>
+
+                    </Column>
+                    <Column>
+                        <Heading>Contact Us</Heading>
+                        <FooterLink href="#">Uttar Pradesh</FooterLink>
+                        <FooterLink href="#">Ahemdabad</FooterLink>
+
+                    </Column>
+                    <Column>
+                        <Heading>Social Media</Heading>
+                        <FooterLink href="#">
+                            <i className="fab fa-facebook-f">
+                <span style={{marginLeft: "10px"}}>
+                  Facebook
+                </span>
+                            </i>
+                        </FooterLink>
+                        <FooterLink href="#">
+                            <i className="fab fa-instagram">
+                <span style={{marginLeft: "10px"}}>
+                  Instagram
+                </span>
+                            </i>
+                        </FooterLink>
+                        <FooterLink href="#">
+                            <i className="fab fa-youtube">
+                <span style={{marginLeft: "10px"}}>
+                  Youtube
+                </span>
+                            </i>
+                        </FooterLink>
+                    </Column>
+                </Row>
+            </Container>
+        </Box>
     );
-}
+};
+
 
 export default Footer;

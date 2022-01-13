@@ -5,14 +5,10 @@ import "./styles.css";
 import {Alert, Button} from "react-bootstrap";
 
 const Notification = ({setIsShow}) => {
-
-
     return (
-
         <Alert variant="success">
             <Alert.Heading>Hey, nice to see you</Alert.Heading>
             <Button onClick={() => (setIsShow(false))}>X</Button>
-
         </Alert>
     );
 }
@@ -59,13 +55,23 @@ const Form = () => {
         setIsShow(true);
     }
 
+    const getValidationValues = (name, value) => {
+        const validationValues = {value};
+        if (name === "confirmPassword")
+            validationValues["password"] = formCurrentData.password.value;
+
+        return validationValues;
+    }
+
 
     const handleInputChange = (e) => {
-        // debugger
+
         const {name, value} = e.target;
         const validators = formValidators[name];
+        const validationValues = getValidationValues(name, value);
 
-        const error = getErrorsAfterValidation(value, validators);
+        const error = getErrorsAfterValidation(validationValues, validators);
+
         console.log("🚀 ~ error", error)
         setFormCurrentData(prev => {
             return {

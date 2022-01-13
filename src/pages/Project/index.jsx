@@ -4,7 +4,6 @@ import Project from "../../components/Project";
 
 const ProjectPage = () => {
     return (
-
         <Project/>
     )
 }

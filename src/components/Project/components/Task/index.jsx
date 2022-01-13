@@ -1,7 +1,7 @@
 import React, {memo} from "react";
-// import {MDBCard, MDBCardBody, MDBCardHeader, MDBCardText, MDBCardTitle} from 'mdb-react-ui-kit';
 import "./styles.css";
 import {Button, Card} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Task = ({
                   id,
@@ -24,21 +24,13 @@ const Task = ({
     return (
 
         <div className="bigDiv">
-
-            {/*<MDBCard background='primary' className='text-white mb-3' style={{maxWidth: '18rem'}}>*/}
-            {/*    <MDBCardHeader>Header</MDBCardHeader>*/}
-            {/*    <MDBCardBody>*/}
-            {/*        <MDBCardTitle>Primary card title</MDBCardTitle>*/}
-            {/*        <MDBCardText>*/}
-            {/*            Some quick example text to build on the card title and make up the bulk of the card's content.*/}
-            {/*        </MDBCardText>*/}
-            {/*    </MDBCardBody>*/}
-            {/*</MDBCard>*/}
-
-
             <Card style={{backgroundColor: generateRandomColor()}} className="card">
                 <Card.Body>
-                    <Card.Title>{title}</Card.Title>
+                    <Card.Title>
+                        <Link to={`/task/${id}`}>
+                            {title}
+                        </Link>
+                    </Card.Title>
                     <Card.Title className="must-do-text">Must do : {attachedTo}</Card.Title>
                     <Card.Text>
                         {description}

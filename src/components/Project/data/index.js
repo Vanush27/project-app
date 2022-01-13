@@ -1,4 +1,11 @@
-import { isRequired, validateEmail } from "../components/FormComponent/helpers/validators";
+import {
+    confirmPasswordValidator,
+    isRequired,
+    validateEmail,
+    validateName,
+    validatePassword,
+    validatePhone
+} from "../components/helpers/validators";
 
 export const formData = [{
     name: "name",
@@ -11,23 +18,23 @@ export const formData = [{
     type: "text",
     id: "email_id"
 },
-{
-    name: "phone",
-    label: "Phone",
-    type: "number",
-    id: "phone_id"
-}, {
-    name: "password",
-    label: "Password",
-    type: "password",
-    id: "password_id"
-},
-{
-    name: "confirmPassword",
-    label: "Confirm Password",
-    type: "password",
-    id: "confirm_password_id"
-}];
+    {
+        name: "phone",
+        label: "Phone",
+        type: "number",
+        id: "phone_id"
+    }, {
+        name: "password",
+        label: "Password",
+        type: "password",
+        id: "password_id"
+    },
+    {
+        name: "confirmPassword",
+        label: "Confirm Password",
+        type: "password",
+        id: "confirm_password_id"
+    }];
 
 
 export const initialFormCurrentData = {
@@ -60,9 +67,9 @@ export const initialFormCurrentData = {
 
 
 export const formValidators = {
-    name: [isRequired],
+    name: [isRequired, validateName],
     email: [isRequired, validateEmail],
-    phone: [isRequired],
-    password: [isRequired],
-    confirmPassword: [isRequired],
+    phone: [isRequired, validatePhone],
+    password: [isRequired,validatePassword],
+    confirmPassword: [isRequired, confirmPasswordValidator],
 }

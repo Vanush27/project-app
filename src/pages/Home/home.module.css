@@ -1,3 +1,8 @@
+.home{
+    max-width: 1120px;
+    width: 100%;
+    padding-bottom: 200px;
+}
 .title{
     font-size: 45px;
     color: #f273a9;
@@ -89,4 +94,9 @@
         color: #f273a9;
         font-weight: 500;
     }
+}
+
+@media (max-width: 1000px) {
+
+
 }
