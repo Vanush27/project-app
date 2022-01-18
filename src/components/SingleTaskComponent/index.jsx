@@ -13,7 +13,7 @@ const SingleTaskComponent = () => {
             setTimeout(() => {
                 const tasks = JSON.parse(localStorage.getItem('data'));
                 const candidate = tasks.find(task => task.id === taskId);
-                console.log("🚀 ~ candidate", candidate)
+
                 resolve(candidate);
             }, 1000);
         })
@@ -22,7 +22,6 @@ const SingleTaskComponent = () => {
     useEffect(() => {
         getTaskFromDB(task_id)
             .then(task => {
-                console.log("🚀 ~ task", task)
                 setData(task);
             });
     }, []);

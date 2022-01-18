@@ -2,20 +2,11 @@ import {useState} from "react";
 import {formData, formValidators, initialFormCurrentData} from "../../../../data";
 import FormGroup from "../FormGroup";
 import "./styles.css";
-import {Alert, Button} from "react-bootstrap";
-
-const Notification = ({setIsShow}) => {
-    return (
-        <Alert variant="success">
-            <Alert.Heading>Hey, nice to see you</Alert.Heading>
-            <Button onClick={() => (setIsShow(false))}>X</Button>
-        </Alert>
-    );
-}
+import {Button} from "react-bootstrap";
+import swal from 'sweetalert';
 
 
 const Form = () => {
-    const [isShow, setIsShow] = useState(false);
 
     const [formCurrentData, setFormCurrentData] = useState(initialFormCurrentData);
 
@@ -40,7 +31,7 @@ const Form = () => {
             password: formCurrentData.password.value,
             confirmPassword: formCurrentData.confirmPassword.value,
         }
-        // debugger
+
         const formData = localStorage.getItem("dataForm");
         if (formData && JSON.parse(formData) && JSON.parse(formData).length) {
 
@@ -50,9 +41,20 @@ const Form = () => {
         }
         localStorage.setItem('dataForm', JSON.stringify(obj));
 
+        if (obj.name && obj.password && obj.confirmPassword && obj.phone && obj.email) {
+            swal({
+                title: "Good job!",
+                text: "You have filled in all fields!",
+                icon: "success",
+            });
 
-        setFormCurrentData(initialFormCurrentData);
-        setIsShow(true);
+            setFormCurrentData(initialFormCurrentData);
+        } else {
+            swal({
+                title: "All fields is required!",
+            });
+        }
+
     }
 
     const getValidationValues = (name, value) => {
@@ -72,7 +74,6 @@ const Form = () => {
 
         const error = getErrorsAfterValidation(validationValues, validators);
 
-        console.log("🚀 ~ error", error)
         setFormCurrentData(prev => {
             return {
                 ...prev,
@@ -88,12 +89,8 @@ const Form = () => {
         setLocalForm([...localForm, {[name]: value}]);
     }
 
-
     return (
         <div className="form">
-            {isShow && <Notification
-                setIsShow={setIsShow}
-            />}
             {formData.map(data => {
                 return (
                     <FormGroup
@@ -108,5 +105,4 @@ const Form = () => {
         </div>
     )
 }
-
 export default Form;

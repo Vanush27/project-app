@@ -11,8 +11,9 @@ const Todo = ({
               }) => {
     return (
         <div className="tasks-wrapper">
-            {mockTasks.length > 0 && mockTasks.map(task => (
+            {mockTasks.length > 0 && mockTasks.map((task, index) => (
                 <Task
+                    index = {index+1}
                     key={task.id}
                     handleDeleteTask={handleDeleteTask}
                     toggleStatusChange={toggleStatusChange}

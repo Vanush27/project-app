@@ -1,27 +1,40 @@
 .must-do-text {
     color: #a29dae;
     font-weight: 600;
+}
 
-}
-.btns{
-    margin-left: 60px;
-}
 .card {
-    height: 300px;
-    width: 340px;
+    min-height: 400px;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 12px;
+}
+.card:hover{
+    box-shadow: 0 0 20px #00000028;
+}
+.title-card-left{
+    width: 95%;
+    padding: 5px;
+}
+.title-card-right{
+    width: 5%;
+    font-size: 28px!important;
+}
 
+.title-card{
+    display: flex;
+    justify-content: space-between;
 }
 .bigDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-
 }
 .status-text {
     font-size: 19px;
     font-weight: 600;
-    margin-bottom: 50px;
+    min-height: calc(400px - 300px);
 
 }
 .status-done {
@@ -34,11 +47,13 @@
     margin-right: 10px;
 }
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 768px) {
 
-    /*.bigDiv{*/
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*   */
-    /*}*/
+    .card {
+        min-height: 400px;
+        max-width: 350px;
+        width: 100%;
+        border-radius: 12px;
+    }
+
 }

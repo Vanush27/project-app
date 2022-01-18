@@ -8,22 +8,26 @@ const AddTask = ({
                      modalShow,
                      editItem,
                      setMockTasks,
-                     setModalShow
+                     setModalShow,
+                     error
                  }) => {
 
     const [formData, setFormData] = useState([]);
     const [data, setData] = useState(editItem);
 
+
     const handleChange = useCallback((e) => {
         const {value, name} = e.target;
 
         setFormData((prevData => {
+
             const newTask = {
                 ...prevData,
                 touched: true,
                 id: Math.random(),
                 [name]: value,
                 status: "Active",
+
             };
             return newTask;
         }));
@@ -31,6 +35,8 @@ const AddTask = ({
     }, []);
 
     const editData = () => {
+
+
         const localData = localStorage.getItem('data')
         const parse = JSON.parse(localData)
         if (parse) {
@@ -40,11 +46,9 @@ const AddTask = ({
                 }
                 return el;
             })
-
             localStorage.setItem('data', JSON.stringify(test))
             setMockTasks(test);
             setModalShow(false)
-
         }
     }
 
@@ -63,7 +67,6 @@ const AddTask = ({
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-
                     <FormComponent
                         formData={formData}
                         handleChange={handleChange}
@@ -72,7 +75,7 @@ const AddTask = ({
                         data={data}
                         setData={setData}
                     />
-
+                    {error && <div className="text-danger">All fields is required</div>}
                 </Modal.Body>
                 <Modal.Footer>
 

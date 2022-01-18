@@ -4,13 +4,13 @@ import styles from "./about.module.css"
 
 const About = () => {
     return (
-        <div className="container-wrapper">
+        <div id="about">
             <div className={`${styles.about_pag}`}>
                 <div className={`${styles.left}`}>
                 </div>
                 <div className={`${styles.right}`}>
                     <div className={`${styles.wrapper}`}>
-                        <div className={`${styles.image}`}>
+                        <div className={`${styles.img}`}>
                             <img src={avatar} alt="avatar"/>
                         </div>
                         <div className={`${styles.contacts}`}>
@@ -42,8 +42,9 @@ const About = () => {
                     <div className={`${styles.wrapper}`}>
                         <div className={`${styles.contacts}`}>
                             <ul>
-                                <li> «NATIONAL BODY FOR STANDARDS AND METROLOGY»CJSC
+                                <li><p> «NATIONAL BODY FOR STANDARDS AND METROLOGY» CJSC
                                     Electrical Meters Measurement Department, leading specialist 2015 – Present
+                                </p>
                                 </li>
 
                             </ul>
@@ -51,7 +52,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-
 
             <div className={`${styles.about_pag}`}>
                 <div className={`${styles.left}`}>
@@ -65,14 +65,14 @@ const About = () => {
                     <div className={`${styles.wrapper}`}>
 
                         <div className={`${styles.contacts}`}>
-                                <ul className={`${styles.skills}`}>
-                                    <li>*  HTML,CSS</li>
-                                    <li>*  JavaScript, React JS</li>
-                                    <li>*  PHP (Laravel), OOP</li>
-                                    <li>*  JQuery, Ajax, REST API</li>
-                                    <li>*  Git,MySql</li>
-                                    <li>*  Linux,Figma,Photoshop</li>
-                                </ul>
+                            <ul className={`${styles.skills}`}>
+                                <li><p>* HTML,CSS</p></li>
+                                <li><p>* JavaScript, React JS</p></li>
+                                <li><p>* PHP (Laravel), OOP</p></li>
+                                <li><p>* JQuery, Ajax, REST API</p></li>
+                                <li><p>* Git,MySql</p></li>
+                                <li><p>* Linux,Figma,Photoshop</p></li>
+                            </ul>
                         </div>
 
                     </div>
@@ -91,16 +91,16 @@ const About = () => {
                         <div className={`${styles.contacts}`}>
                             <h5>Courses (2019 -2021)</h5>
                             <ul>
-                                <li>1.Java and Android courses in Basic IT Centre 2019 (6 months)</li>
-                                <li>2.Integrated Circuit Design is Synopsys Armenia 2019-2020 (3 months)</li>
-                                <li>3.Web developer trainings in TCO LLC 2021</li>
+                                <li><p>1.Java and Android courses in Basic IT Centre 2019 (6 months)</p></li>
+                                <li><p>2.Integrated Circuit Design is Synopsys Armenia 2019-2020 (3 months)</p></li>
+                                <li><p>3.Web developer trainings in TCO LLC 2021</p></li>
 
                             </ul>
                             <h5>University (2007 - 2011)</h5>
                             <ul>
-                                <li>State Engineering University of Armenia(Polytechnic)
-                                    Spec: Design and Technology of Electronic Devices
-                                </li>
+                                <li><p>State Engineering University of Armenia(Polytechnic)</p></li>
+                                <li><p>Spec: Design and Technology of Electronic Devices</p></li>
+
                             </ul>
                         </div>
 
@@ -119,9 +119,10 @@ const About = () => {
                     <div className={`${styles.wrapper}`}>
                         <div className={`${styles.contacts}`}>
                             <ul>
-                                <li>Armenian Native</li>
-                                <li> Russian Good</li>
-                                <li> English Good</li>
+                                <li><p className={styles.language_block}><span>Armenian</span> <span> Native</span></p>
+                                </li>
+                                <li><p className={styles.language_block}><span>Russian</span> <span>Good</span></p></li>
+                                <li><p className={styles.language_block}><span>English</span> <span>Good</span></p></li>
                             </ul>
                         </div>
                     </div>

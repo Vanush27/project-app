@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./home.module.css";
 
+
 const Home = () => {
     return <div className={`${styles.home}`}>
-        <h1 className={`${styles.title}`}>Home Page</h1>
+        {/*<h1 className={`${styles.title}`}></h1>*/}
 
         <section id={`${styles.hero}`}>
             <div className={`${styles.hero} `}>

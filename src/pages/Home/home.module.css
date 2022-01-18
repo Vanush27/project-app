@@ -3,12 +3,6 @@
     width: 100%;
     padding-bottom: 200px;
 }
-.title{
-    font-size: 45px;
-    color: #f273a9;
-    text-align: center;
-    padding: 15px;
-}
 
 #hero::after{
     content: "";
@@ -48,10 +42,11 @@
     left: 0;
     height: 100%;
     width: 0;
-    background-color: #fcbdd9;
+    background-color: #f6f6f6;
     animation: text_reveal_box 1s ease;
     animation-delay: .5s;
 }
+
 
 #hero h1:nth-child(1) span{
     animation-delay: .5s;
@@ -66,7 +61,7 @@
 
 #hero .hero{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 0 50px;
     justify-content: flex-start;
 }
@@ -85,13 +80,13 @@
 
 @keyframes text_reveal{
     100% {
-        color: #f273a9;
+        color: #6b6e77;
     }
 }
 
 @keyframes text_reveal_name{
     100% {
-        color: #f273a9;
+        color: #474951;
         font-weight: 500;
     }
 }

@@ -1,4 +1,4 @@
-import { Navigate } from "react-router";
+import {Navigate} from "react-router";
 import NotFound from "../../pages/404";
 import About from "../../pages/About";
 import Home from "../../pages/Home";
@@ -14,7 +14,7 @@ export const routes = [
         element:
             <>
                 <Header/>
-                <Home />
+                <Home/>
                 <Footer/>
             </>
 
@@ -24,7 +24,7 @@ export const routes = [
         element:
             <>
                 <Header/>
-                <About />
+                <About/>
                 <Footer/>
             </>
 
@@ -34,7 +34,7 @@ export const routes = [
         element:
             <>
                 <Header/>
-                <Project />
+                <Project/>
                 <Footer/>
             </>
     },
@@ -45,18 +45,24 @@ export const routes = [
                 <Header/>
                 <FormPage/>
                 <Footer/>
-           </>
+            </>
     },
     {
         path: "/not-found",
-        element: <NotFound />
+        element: <NotFound/>
     },
     {
         path: "/task/:task_id",
-        element: <SingleTask />
+        element:
+            <>
+                <Header/>
+                <SingleTask/>
+                <Footer/>
+            </>
+
     },
     {
         path: "*",
-        element: <Navigate to="/not-found" />
+        element: <Navigate to="/not-found"/>
     }
 ]

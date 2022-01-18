@@ -5,35 +5,40 @@ import {Link} from "react-router-dom";
 
 const Task = ({
                   id,
+                  index,
                   title,
                   description,
                   status,
                   attachedTo,
                   handleDeleteTask,
                   toggleStatusChange,
-                  handleEdit
+                  handleEdit,
+                  date
               }) => {
 
     const statusClassName = status === "done" ? "status-done" : "status-active";
     const statusBtn = status === "done" ? "Active" : "Done"
 
-    function generateRandomColor() {
-        return '#' + Math.floor(Math.random() * 16777215).toString(16);
-    }
 
     return (
 
         <div className="bigDiv">
-            <Card style={{backgroundColor: generateRandomColor()}} className="card">
+            <Card className="card">
                 <Card.Body>
-                    <Card.Title>
-                        <Link to={`/task/${id}`}>
-                            {title}
-                        </Link>
-                    </Card.Title>
+                    <div className="title-card">
+                        <Card.Title className="title-card-left">
+                            <Link to={`/task/${id}`}>
+                                Title: {title}
+                            </Link>
+                        </Card.Title>
+                        <Card.Title className="title-card-right">
+                            {index}
+                        </Card.Title>
+                    </div>
+
                     <Card.Title className="must-do-text">Must do : {attachedTo}</Card.Title>
                     <Card.Text>
-                        {description}
+                        Description: {description}
                     </Card.Text>
                     <Card.Text className="status-text">
                         Status:
@@ -42,15 +47,17 @@ const Task = ({
                     </span>
                     </Card.Text>
                     <Card.Text>
-                        {/* Date  :  {new Date(date).format("YYYY MM DD")} */}
+                        Date : {date}
+
                     </Card.Text>
+
                     <div className="btns">
-                        <Button variant="danger mr-2"
+                        <Button variant="danger mr-2" className="m-2"
                                 onClick={() => handleDeleteTask(id)}
                         >
                             Delete
                         </Button>
-                        <Button variant="warning mr-2" onClick={() => handleEdit(id)}>Edit</Button>
+                        <Button variant="warning mr-2" className="m-4" onClick={() => handleEdit(id)}>Edit</Button>
                         <Button
                             variant={`${statusBtn === "Active" ? "success" : "primary"} `}
                             onClick={() => toggleStatusChange(id)}

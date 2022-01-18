@@ -1,14 +1,14 @@
-
 .heading1 {
     text-align: center;
-    color:rgb(151, 127, 127);
+    color: #02955b;
     margin: 40px;
 }
-.project-container{
-    min-width: 1120px;
+.project-container {
     width: 100%;
-    min-height: 400px;
+    min-height: 450px;
 }
-@media only screen and (max-width: 950px){
-
+.add_btn {
+    background-color: #02955b !important;
+    border-color: #02955b !important;
+    margin: 5px !important;
 }
